@@ -1,2 +1,2 @@
-# cypress_m-m
+# cypress_m&m
 Learning Cypress and having fun!
