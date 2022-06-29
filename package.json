@@ -1,0 +1,22 @@
+{
+  "name": "cypress_mnm",
+  "version": "0.1.0",
+  "description": "learning project",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"cypress:open\": \"cypress open\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moisesisaias/cypress_mNm.git"
+  },
+  "author": "Miguel Henriquez & Moises R. Ramirez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moisesisaias/cypress_mNm/issues"
+  },
+  "homepage": "https://github.com/moisesisaias/cypress_mNm#readme",
+  "devDependencies": {
+    "cypress": "^10.3.0"
+  }
+}
