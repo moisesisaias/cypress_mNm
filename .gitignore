@@ -1,2 +1,10 @@
 
-node_modules/.bin/cypress
+# compiled output
+/dist
+/tm
+/out-tsc
+
+# dependencies
+/node_modules
+
+/coverage
