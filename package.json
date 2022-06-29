@@ -4,7 +4,7 @@
   "description": "learning project",
   "main": "index.js",
   "scripts": {
-    "test": "\"cypress:open\": \"cypress open\""
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
