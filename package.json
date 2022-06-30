@@ -2,7 +2,7 @@
   "name": "cypress_mnm",
   "version": "0.1.0",
   "description": "learning project",
-  "main": "index.js",
+  "main": "cypress.config.js",
   "scripts": {
     "cypress:open": "cypress open"
   },
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/moisesisaias/cypress_mNm#readme",
   "devDependencies": {
-    "cypress": "^10.3.0"
+    "cypress": "10.3.0"
   }
 }
