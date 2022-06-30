@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+import InventoryPage from '../PageObjects/InventoryPage';
 import LoginPage from '../PageObjects/LoginPage';
 
 describe('Login test', () => {
@@ -10,6 +11,6 @@ describe('Login test', () => {
         LoginPage.UsernameInput().type('standard_user');
         LoginPage.PasswordInput().type('secret_sauce');
         LoginPage.LoginButon().click();
-        
+        InventoryPage.TitleField().contains('Products');
     });
 });
