@@ -2,12 +2,6 @@
 
 class LoginPage {
 
-    // elements = {
-    //     UsernameInput: () => cy.get('#user-name'),
-    //     PasswordInput: () => cy.get('#password'),
-    //     LoginButton: () => cy.get('#login-button'),
-    // }
-
     Navigate(){
         return cy.visit('https://www.saucedemo.com/');
     }
