@@ -18,6 +18,15 @@ class LoginPage {
 
     LoginButon() {return cy.get('#login-button');}
 
+    ErrorMsgContainer() {return cy.get('.error-message-container');}
+
+    Login(username, password){
+        this.Navigate();
+        this.UsernameInput().type(username);
+        this.PasswordInput().type(password);
+        this.LoginButon().click();
+    }
+
 
 }
 module.exports = new LoginPage();
