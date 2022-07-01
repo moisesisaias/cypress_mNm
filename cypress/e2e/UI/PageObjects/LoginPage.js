@@ -1,9 +1,11 @@
 /// <reference types="cypress" />
 
+import settings from '../../../fixtures/settings.json'
+
 class LoginPage {
 
     Navigate(){
-        return cy.visit('https://www.saucedemo.com/');
+        return cy.visit(settings.sauce_demo_url);
     }
 
     UsernameInput() {return cy.get('#user-name');}
