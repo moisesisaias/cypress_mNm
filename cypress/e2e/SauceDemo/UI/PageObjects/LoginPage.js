@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import settings from '../../../fixtures/settings.json'
+import settings from '../../../../fixtures/settings.json'
 
 class LoginPage {
 
@@ -22,7 +22,6 @@ class LoginPage {
         this.PasswordInput().type(password);
         this.LoginButon().click();
     }
-
 
 }
 module.exports = new LoginPage();
