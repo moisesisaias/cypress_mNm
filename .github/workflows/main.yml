@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - 'main'
-      - 'fix_run_cypress_job'
   workflow_dispatch:
 
 jobs:
