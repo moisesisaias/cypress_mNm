@@ -1,6 +1,6 @@
 {
     "cypress_example_url": "https://example.cypress.io/",
-    "saude_demo": {
+    "sauce_demo": {
         "url": "https://www.saucedemo.com/",
         "credentials":{
             "standard_user":"standard_user",
