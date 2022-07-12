@@ -8,6 +8,7 @@ class InventoryPage {
     }
 
     TitleField() {return cy.get('span[class="title"]');}
+    InventoryItemImgs() {return cy.get('img[class="inventory_item_img"]');}
 
 }
 module.exports = new InventoryPage();
