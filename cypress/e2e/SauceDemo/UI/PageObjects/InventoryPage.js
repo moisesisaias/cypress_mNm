@@ -4,7 +4,7 @@ import settings from '../../../../fixtures/settings.json'
 class InventoryPage {
 
     Navigate(){
-        return cy.visit(`${settings.cypress_example_url}/inventory.html`);
+        return cy.visit(`${settings.sauce_demo.url}/inventory.html`);
     }
 
     TitleField() {return cy.get('span[class="title"]');}

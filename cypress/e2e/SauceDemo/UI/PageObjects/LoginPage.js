@@ -5,7 +5,7 @@ import settings from '../../../../fixtures/settings.json'
 class LoginPage {
 
     Navigate(){
-        return cy.visit(settings.sauce_demo_url);
+        return cy.visit(settings.sauce_demo.url);
     }
 
     UsernameInput() {return cy.get('#user-name');}

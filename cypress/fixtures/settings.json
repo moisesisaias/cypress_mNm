@@ -1,4 +1,13 @@
 {
-    "sauce_demo_url": "https://www.saucedemo.com/",
-    "cypress_example_url": "https://example.cypress.io/"
+    "cypress_example_url": "https://example.cypress.io/",
+    "sauce_demo": {
+        "url": "https://www.saucedemo.com/",
+        "credentials":{
+            "standard_user":"standard_user",
+            "locked_out_user":"locked_out_user",
+            "problem_user":"problem_user",
+            "performance_glitch_user":"performance_glitch_user",
+            "password":"secret_sauce"
+        }
+    }
 }
