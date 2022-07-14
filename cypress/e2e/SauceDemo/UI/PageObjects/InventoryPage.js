@@ -14,6 +14,10 @@ class InventoryPage {
     return cy.get("#react-burger-menu-btn");
   }
 
+  InventoryItemImgs() {
+    return cy.get('img[class="inventory_item_img"]');
+  }
+  
   LogoutAnchor() {
     return cy.get("#logout_sidebar_link");
   }
