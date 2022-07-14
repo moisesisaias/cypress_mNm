@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-import Stopwatch from "timer-stopwatch/lib/Stopwatch";
 import settings from "../../../../fixtures/settings.json";
 
 import InventoryPage from "../PageObjects/InventoryPage";
