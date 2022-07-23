@@ -39,7 +39,6 @@ describe("Landing Page Tests", () => {
       ItemNames.push($el.text());
     });
     const SortedNames = ItemNames.sort().reverse();
-    cy.log(ItemNames.sort().reverse());
     InventoryPage.InventoryItemNames().each(($el, $index) => {
       expect($el.text()).to.equal(SortedNames[$index]);
     });
