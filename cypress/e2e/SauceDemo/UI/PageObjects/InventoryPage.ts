@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
-import settings from "../../../../fixtures/settings.json";
+import * as settings from "../../../../fixtures/settings.json";
 
-class InventoryPage {
+export class Inventory {
   Navigate() {
     return cy.visit(`${settings.sauce_demo.url}/inventory.html`);
   }
@@ -43,4 +43,4 @@ class InventoryPage {
     this.LogoutAnchor().click();
   }
 }
-module.exports = new InventoryPage();
+export const InventoryPage = new Inventory();
