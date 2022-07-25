@@ -1,8 +1,8 @@
 name: run cypress tests
-on: 
+on:
   push:
     branches:
-      - 'main'
+      - "main"
   workflow_dispatch:
 
 jobs:
@@ -19,4 +19,4 @@ jobs:
         timeout-minutes: 10
         with:
           browser: chrome
-          config-file: cypress.config.js
+          config-file: cypress.config.ts
