@@ -1,5 +1,8 @@
 name: run cypress tests
-on: 
+on:
+  pull-request:
+    branches:
+      - "main"
   push:
     branches:
       - 'main'
