@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
-import settings from "../../../../fixtures/settings.json";
+import * as settings from "../../../../fixtures/settings.json";
 
-import InventoryPage from "../PageObjects/InventoryPage";
-import LoginPage from "../PageObjects/LoginPage";
+import { InventoryPage } from "../PageObjects/InventoryPage";
+import { LoginPage } from "../PageObjects/LoginPage";
 
 describe("Login test", () => {
   it("Logs in successfully to the web app", () => {
