@@ -1,11 +1,11 @@
 name: run cypress tests
 on:
-  pull-request:
+  pull_request:
     branches:
       - "main"
   push:
     branches:
-      - 'main'
+      - "main"
   workflow_dispatch:
 
 jobs:
