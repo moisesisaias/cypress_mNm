@@ -89,4 +89,28 @@ describe("Landing Page Tests", () => {
       expect($el.text()).to.equal(ItemPrices[$index]);
     });
   });
+
+  it("should update cart badge when adding/removing items to cart", () => {
+    InventoryPage.CartAnchor()
+      .get("span.shopping_cart_badge")
+      .should("not.exist");
+    InventoryPage.ItemButtons().then((items) => {
+      items[0].click();
+      items[1].click();
+    });
+    InventoryPage.CartAnchor()
+      .get("span.shopping_cart_badge")
+      .should("have.text", 2);
+
+    // remove items
+    InventoryPage.ItemButtons()
+      .get(".btn_secondary")
+      .should("have.length", 2)
+      .first()
+      .click();
+
+    InventoryPage.CartAnchor()
+      .get("span.shopping_cart_badge")
+      .should("have.text", 1);
+  });
 });

@@ -42,5 +42,13 @@ export class Inventory {
     this.MenuButton().click();
     this.LogoutAnchor().click();
   }
+
+  CartAnchor() {
+    return cy.get("#shopping_cart_container > a.shopping_cart_link");
+  }
+
+  ItemButtons() {
+    return cy.get("button.btn.btn_inventory");
+  }
 }
 export const InventoryPage = new Inventory();
