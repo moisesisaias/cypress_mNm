@@ -18,12 +18,15 @@ describe("Landing Page Tests", () => {
       "Name (A to Z)"
     );
     const ItemNames = [];
-    InventoryPage.InventoryItemNames().each(($el) => {
-      ItemNames.push($el.text());
-    });
-    const SortedNames = ItemNames.sort();
+    InventoryPage.InventoryItemNames()
+      .each(($el) => {
+        ItemNames.push($el.text());
+      })
+      .then(() => {
+        ItemNames.sort();
+      });
     InventoryPage.InventoryItemNames().each(($el, $index) => {
-      expect($el.text()).to.equal(SortedNames[$index]);
+      expect($el.text()).to.equal(ItemNames[$index]);
     });
   });
 
@@ -35,12 +38,15 @@ describe("Landing Page Tests", () => {
       "Name (Z to A)"
     );
     let ItemNames = [];
-    InventoryPage.InventoryItemNames().each(($el) => {
-      ItemNames.push($el.text());
-    });
-    const SortedNames = ItemNames.sort().reverse();
+    InventoryPage.InventoryItemNames()
+      .each(($el) => {
+        ItemNames.push($el.text());
+      })
+      .then(() => {
+        ItemNames.sort().reverse();
+      });
     InventoryPage.InventoryItemNames().each(($el, $index) => {
-      expect($el.text()).to.equal(SortedNames[$index]);
+      expect($el.text()).to.equal(ItemNames[$index]);
     });
   });
 
@@ -52,12 +58,15 @@ describe("Landing Page Tests", () => {
       "Price (low to high)"
     );
     let ItemPrices = [];
-    InventoryPage.InventoryItemPrices().each(($el) => {
-      ItemPrices.push($el.text());
-    });
-    const SortedPrices = ItemPrices.sort();
+    InventoryPage.InventoryItemPrices()
+      .each(($el) => {
+        ItemPrices.push($el.text());
+      })
+      .then(() => {
+        ItemPrices.sort((a, b) => a - b);
+      });
     InventoryPage.InventoryItemPrices().each(($el, $index) => {
-      expect($el.text()).to.equal(SortedPrices[$index]);
+      expect($el.text()).to.equal(ItemPrices[$index]);
     });
   });
 
@@ -69,12 +78,15 @@ describe("Landing Page Tests", () => {
       "Price (high to low)"
     );
     let ItemPrices = [];
-    InventoryPage.InventoryItemPrices().each(($el) => {
-      ItemPrices.push($el.text());
-    });
-    const SortedPrices = ItemPrices.sort().reverse();
+    InventoryPage.InventoryItemPrices()
+      .each(($el) => {
+        ItemPrices.push($el.text());
+      })
+      .then(() => {
+        ItemPrices.sort((a, b) => b - a);
+      });
     InventoryPage.InventoryItemPrices().each(($el, $index) => {
-      expect($el.text()).to.equal(SortedPrices[$index]);
+      expect($el.text()).to.equal(ItemPrices[$index]);
     });
   });
 });
