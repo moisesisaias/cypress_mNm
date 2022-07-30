@@ -3,6 +3,7 @@ import * as settings from "../../../../fixtures/settings.json";
 
 import { InventoryPage } from "../PageObjects/InventoryPage";
 import { LoginPage } from "../PageObjects/LoginPage";
+import Shared from "../PageObjects/Shared";
 
 describe("Landing Page Tests", () => {
   beforeEach(() => {
@@ -11,7 +12,7 @@ describe("Landing Page Tests", () => {
       settings.sauce_demo.credentials.password
     );
   });
-  it("Verify default sorting on landing page", () => {
+  it("Verify default sorng on landing page", () => {
     InventoryPage.CurrentSortingField().should(
       "have.prop",
       "textContent",
@@ -91,26 +92,20 @@ describe("Landing Page Tests", () => {
   });
 
   it("should update cart badge when adding/removing items to cart", () => {
-    InventoryPage.CartAnchor()
-      .get("span.shopping_cart_badge")
-      .should("not.exist");
-    InventoryPage.ItemButtons().then((items) => {
+    cy.get("span.shopping_cart_badge").should("not.exist");
+    Shared.ItemButtons().then((items) => {
       items[0].click();
       items[1].click();
     });
-    InventoryPage.CartAnchor()
-      .get("span.shopping_cart_badge")
-      .should("have.text", 2);
+    Shared.CartLinkBadge().should("have.text", 2);
 
     // remove items
-    InventoryPage.ItemButtons()
+    Shared.ItemButtons()
       .get(".btn_secondary")
       .should("have.length", 2)
       .first()
       .click();
 
-    InventoryPage.CartAnchor()
-      .get("span.shopping_cart_badge")
-      .should("have.text", 1);
+    Shared.CartLinkBadge().should("have.text", 1);
   });
 });

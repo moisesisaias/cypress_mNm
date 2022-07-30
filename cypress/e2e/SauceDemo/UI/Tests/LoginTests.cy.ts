@@ -3,6 +3,7 @@ import * as settings from "../../../../fixtures/settings.json";
 
 import { InventoryPage } from "../PageObjects/InventoryPage";
 import { LoginPage } from "../PageObjects/LoginPage";
+import { Shared } from "../PageObjects/Shared";
 
 describe("Login test", () => {
   it("Logs in successfully to the web app", () => {
@@ -10,7 +11,7 @@ describe("Login test", () => {
       settings.sauce_demo.credentials.standard_user,
       settings.sauce_demo.credentials.password
     );
-    InventoryPage.TitleField().contains("Products");
+    Shared.TitleField().contains("Products");
   });
 
   it("Locked user unable to login", () => {
@@ -29,7 +30,7 @@ describe("Login test", () => {
       settings.sauce_demo.credentials.problem_user,
       settings.sauce_demo.credentials.password
     );
-    InventoryPage.TitleField().contains("Products");
+    Shared.TitleField().contains("Products");
     InventoryPage.InventoryItemImgs().each(($item) => {
       cy.wrap($item).should(
         "have.attr",
@@ -46,7 +47,7 @@ describe("Login test", () => {
     );
     const startTime = performance.now();
     cy.log("Start time: " + startTime);
-    InventoryPage.TitleField().then(($titleField) => {
+    Shared.TitleField().then(($titleField) => {
       const endTime = performance.now();
       cy.wrap($titleField).contains("Products");
       cy.log("End time: " + endTime);

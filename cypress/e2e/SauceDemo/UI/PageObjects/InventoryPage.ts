@@ -6,10 +6,6 @@ export class Inventory {
     return cy.visit(`${settings.sauce_demo.url}/inventory.html`);
   }
 
-  TitleField() {
-    return cy.get('span[class="title"]');
-  }
-
   MenuButton() {
     return cy.get("#react-burger-menu-btn");
   }
@@ -43,12 +39,8 @@ export class Inventory {
     this.LogoutAnchor().click();
   }
 
-  CartAnchor() {
-    return cy.get("#shopping_cart_container > a.shopping_cart_link");
-  }
-
-  ItemButtons() {
-    return cy.get("button.btn.btn_inventory");
+  Items() {
+    return cy.get("div.inventory_item");
   }
 }
 export const InventoryPage = new Inventory();

@@ -6,10 +6,6 @@ export class Cart {
     return cy.visit(`${settings.sauce_demo.url}?/cart.html`);
   }
 
-  TitleField() {
-    return cy.get('span[class="title"]');
-  }
-
   CartItems() {
     return cy.get('div[class="cart_item"]');
   }
