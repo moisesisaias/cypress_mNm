@@ -15,7 +15,7 @@ export class Login {
     return cy.get("#password");
   }
 
-  LoginButon() {
+  LoginButton() {
     return cy.get("#login-button");
   }
 
@@ -27,7 +27,7 @@ export class Login {
     this.Navigate();
     this.UsernameInput().type(username);
     this.PasswordInput().type(password);
-    this.LoginButon().click();
+    this.LoginButton().click();
   }
 }
 export const LoginPage = new Login();

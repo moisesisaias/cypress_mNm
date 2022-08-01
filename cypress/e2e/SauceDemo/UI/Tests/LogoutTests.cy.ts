@@ -14,7 +14,7 @@ describe("Logout Test", () => {
     InventoryPage.Logout();
     cy.url().should("eq", settings.sauce_demo.url);
 
-    LoginPage.LoginButon().click();
+    LoginPage.LoginButton().click();
 
     LoginPage.UsernameInput()
       .should("have.class", "input_error")

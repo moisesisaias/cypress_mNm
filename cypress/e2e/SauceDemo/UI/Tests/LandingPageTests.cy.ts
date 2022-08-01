@@ -3,6 +3,7 @@ import * as settings from "../../../../fixtures/settings.json";
 
 import { InventoryPage } from "../PageObjects/InventoryPage";
 import { LoginPage } from "../PageObjects/LoginPage";
+import Shared from "../PageObjects/Shared";
 
 describe("Landing Page Tests", () => {
   beforeEach(() => {
@@ -88,5 +89,23 @@ describe("Landing Page Tests", () => {
     InventoryPage.InventoryItemPrices().each(($el, $index) => {
       expect($el.text()).to.equal(ItemPrices[$index]);
     });
+  });
+
+  it("should update cart badge when adding/removing items to cart", () => {
+    cy.get("span.shopping_cart_badge").should("not.exist");
+    Shared.ItemButtons().then((items) => {
+      items[0].click();
+      items[1].click();
+    });
+    Shared.CartLinkBadge().should("have.text", 2);
+
+    // remove items
+    Shared.ItemButtons()
+      .get(".btn_secondary")
+      .should("have.length", 2)
+      .first()
+      .click();
+
+    Shared.CartLinkBadge().should("have.text", 1);
   });
 });
