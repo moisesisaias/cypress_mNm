@@ -12,7 +12,7 @@ describe("Landing Page Tests", () => {
       settings.sauce_demo.credentials.password
     );
   });
-  it("Verify default sorng on landing page", () => {
+  it("Verify default sorting on landing page", () => {
     InventoryPage.CurrentSortingField().should(
       "have.prop",
       "textContent",
